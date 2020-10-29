@@ -23,6 +23,7 @@ class Solution {
                 if(reserve[i] == -1) continue;
                 if(l-1 == reserve[i]){
                     answer++;
+
                     reserve[i] = -1;
                     break;
                 }
