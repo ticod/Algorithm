@@ -10,12 +10,12 @@ public class Main {
         for (char i = 'a'; i <= 'z'; i++) {
             boolean find = false;
             for (int j = 0; j < S.length(); j++) {
-               if (charArray[j] == i) {
-                   sb.append(j);
-                   sb.append(" ");
-                   find = true;
-                   break;
-               }
+                if (charArray[j] == i) {
+                    sb.append(j);
+                    sb.append(" ");
+                    find = true;
+                    break;
+                }
             }
             if (!find) {
                 sb.append(-1);
