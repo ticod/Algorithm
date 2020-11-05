@@ -1,5 +1,3 @@
-
-
 public class Main {
     public static void main(String[] args) {
         final int TEST_MAX = 500000;
@@ -17,7 +15,7 @@ public class Main {
 //        testArray = insertionSort(testArray);
 //        testArray = shellSort(testArray);
 //        testArray = selectionSort(testArray);
-        testArray = quickSort(testArray);
+        quickSort(testArray);
         System.out.println("testing case : " + testArray.length);
         System.out.println("Total Time spend : " + (long) (System.currentTimeMillis() - start));
         System.out.print("checking sorting...");
@@ -108,11 +106,30 @@ public class Main {
         return arr;
     }
 
-    public static int[] quickSort(int[] testArray) {
-
+    public static void quickSort(int[] arr) {
+        quickSort(arr, 0, arr.length - 1);
     }
 
-    public static int[] quickSort(int[] testArray, int s, int e) {
-
+    public static void quickSort(int[] arr, int left, int right) {
+        if (left < right) {
+            int i = left, j = right;
+            int pivot = arr[left];
+            while (i < j) {
+                while (arr[j] > pivot) {
+                    j--;
+                }
+                while (arr[i] <= pivot && i < j) {
+                    i++;
+                }
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+            arr[left] = arr[i];
+            arr[i] = pivot;
+            // pivot 빼고 정렬
+            quickSort(arr, left, i - 1);
+            quickSort(arr, i + 1, right);
+        }
     }
 }
