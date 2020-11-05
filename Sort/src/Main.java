@@ -1,6 +1,8 @@
+
+
 public class Main {
     public static void main(String[] args) {
-        final int TEST_MAX = 100000;
+        final int TEST_MAX = 500000;
         int[] testArray = new int[TEST_MAX];
         for (int i = 0; i < testArray.length; i++) {
             testArray[i] = (int) (Math.random() * TEST_MAX);
@@ -13,8 +15,9 @@ public class Main {
          */
 //        testArray = bubbleSort(testArray);
 //        testArray = insertionSort(testArray);
-        testArray = shellSort(testArray);
+//        testArray = shellSort(testArray);
 //        testArray = selectionSort(testArray);
+        testArray = quickSort(testArray);
         System.out.println("testing case : " + testArray.length);
         System.out.println("Total Time spend : " + (long) (System.currentTimeMillis() - start));
         System.out.print("checking sorting...");
@@ -88,10 +91,10 @@ public class Main {
         정렬 후 전체 배열을 더 작게 분류하여 다시 삽입 정렬로 정렬한다.
         분류된 배열의 길이가 1이 될 때까지 이를 반복한다.
          */
+        // gap을 length / 3 + 1로 하는 알고리즘이 가장 빠르다 - 위키백과
         for (int gap = arr.length / 3 + 1; gap >= 1; gap = gap / 3 + 1) {
-            System.out.println(gap);
-            for (int count = 0; count < gap; count++) {
-                for (int i = count + gap; i < arr.length; i += gap) {
+            for (int list = 0; list < gap; list++) {
+                for (int i = list + gap; i < arr.length; i += gap) {
                     int key = arr[i];
                     int j = i - gap;
                     for (; j >= 0 && arr[j] > key; j -= gap) {
@@ -100,10 +103,16 @@ public class Main {
                     arr[j + gap] = key;
                 }
             }
-            if (gap == 1) {
-                break;
-            }
+            if (gap == 1) break;
         }
         return arr;
+    }
+
+    public static int[] quickSort(int[] testArray) {
+
+    }
+
+    public static int[] quickSort(int[] testArray, int s, int e) {
+
     }
 }
