@@ -88,13 +88,12 @@ public class Main {
         정렬 후 전체 배열을 더 작게 분류하여 다시 삽입 정렬로 정렬한다.
         분류된 배열의 길이가 1이 될 때까지 이를 반복한다.
          */
-        /* TODO: 성공하는 셀 정렬 완성하기 */
-        for (int gap = arr.length / 2; gap >= 1; gap = gap / 2) {
+        for (int gap = arr.length / 3 + 1; gap >= 1; gap = gap / 3 + 1) {
             System.out.println(gap);
             for (int count = 0; count < gap; count++) {
                 for (int i = count + gap; i < arr.length; i += gap) {
                     int key = arr[i];
-                    int j = count;
+                    int j = i - gap;
                     for (; j >= 0 && arr[j] > key; j -= gap) {
                         arr[j + gap] = arr[j];
                     }
