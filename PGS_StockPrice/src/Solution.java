@@ -71,7 +71,6 @@ class StockPrice {
 
 class Main {
     public static void main(String[] args) {
-//        int[] prices = {1, 2, 3, 1, 4, 3};
         int[] prices = new int[1000000];
         for (int i = 0; i < 1000000; i++) {
             prices[i] = (int)(Math.random() * 10000) + 1;
@@ -94,11 +93,5 @@ class Main {
         } else {
             System.out.println("Test Perfect!!");
         }
-
-//        System.out.println("======= result =======");
-//        for (int result : results) {
-//            System.out.print(result + " ");
-//        }
-//        System.out.println("======= result =======");
     }
 }
