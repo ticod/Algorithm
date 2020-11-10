@@ -4,19 +4,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        Scanner scanner = new Scanner(System.in);
-        int T = scanner.nextInt();
-        int[] x = new int[T];
-        int[] y = new int[T];
+        Scanner sc = new Scanner(System.in);
+        int T = sc.nextInt();
         for (int i = 0; i < T; i++) {
-            x[i] = scanner.nextInt();
-            y[i] = scanner.nextInt();
-        }
-        for (int i = 0; i < T; i++) {
-            long d = y[i] - x[i];
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+            long d = y - x;
             System.out.println(getTimes(d));
         }
-        scanner.close();
+        sc.close();
     }
 
     public static long getStep(long d) {
