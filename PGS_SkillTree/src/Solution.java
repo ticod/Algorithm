@@ -1,7 +1,4 @@
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 class Main {
     public static void main(String[] args) {
@@ -14,16 +11,16 @@ class Solution {
     public int solution(String skill, String[] skillTrees) {
         int answer = 0;
         int skillIndex = 0;
-        Map<Character, Boolean> skillCharacters = new HashMap<>();
+        Set<Character> skillCharacters = new HashSet<>();
 
         for (int i = 0; i < skill.length(); i++) {
-            skillCharacters.put(skill.charAt(i), true);
+            skillCharacters.add(skill.charAt(i));
         }
 
         for (String skillTree : skillTrees) {
             boolean isRightSkill = true;
             for (char ch : skillTree.toCharArray()) {
-                if (skillCharacters.containsKey(ch) &&
+                if (skillCharacters.contains(ch) &&
                         skill.charAt(skillIndex++) != ch) {
                     isRightSkill = false;
                     break;
