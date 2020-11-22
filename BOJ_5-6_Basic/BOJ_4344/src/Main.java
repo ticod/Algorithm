@@ -1,3 +1,5 @@
+package BOJ_4344.src;
+
 import java.util.*;
 
 public class Main {

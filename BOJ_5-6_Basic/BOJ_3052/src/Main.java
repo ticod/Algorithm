@@ -1,3 +1,5 @@
+package BOJ_3052.src;
+
 import java.util.*;
 
 public class Main {

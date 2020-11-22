@@ -1,4 +1,6 @@
-public class Main {
+package main;
+
+class Main {
     public static void main(String[] args) {
         final int TEST_MAX = 500000;
         int[] testArray = new int[TEST_MAX];

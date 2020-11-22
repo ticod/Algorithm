@@ -1,3 +1,5 @@
+package BOJ_2577.src;
+
 import java.util.*;
 
 public class Main {
