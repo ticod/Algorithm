@@ -1,3 +1,5 @@
+package PGS_SkillTree.src;
+
 import java.util.*;
 
 class Main {
