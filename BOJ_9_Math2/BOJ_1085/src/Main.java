@@ -1,3 +1,5 @@
+package BOJ_1085.src;
+
 import java.util.Scanner;
 
 public class Main {

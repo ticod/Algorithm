@@ -1,3 +1,5 @@
+package PGS_Budget.src;
+
 import java.util.Arrays;
 
 class Solution {
